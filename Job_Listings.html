@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CareerHub</title>
+<style>
+    .nav {
+            background: url('https://imageio.forbes.com/specials-images/imageserve/61d52d4e3a76ed81ac034ea8/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds') no-repeat center;
+            background-size: cover;
+            padding: 15px 0;
+            text-align: center;
+        }
+ 
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+ 
+        .nav li {
+            font-family: serif;
+            color: orange;
+            display: inline;
+            margin: 0 15px;
+        }
+ 
+        .nav a {
+            text-decoration: none;
+            color: darkorange;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+.job-button {
+  background-color: #07b5fa5d;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 75px;
+  cursor: crosshair;
+  border-radius: 15%;
+  position: relative; 
+}
+
+.job-description {
+  display: none; 
+  position: absolute;
+  background-color: #000000;
+  border: 1px solid #000000;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 300px; 
+  padding: 15px;
+  margin-top: 10px;
+  transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out; 
+}
+
+.job-button:hover .job-description {
+  display: block;
+  opacity: 1; 
+  height: auto; 
+  border-radius: 30px;
+}
+
+.learn-more-button {
+  background-color: #008CBA; 
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+p{
+    color: #000000;
+}
+body{
+    background: linear-gradient(to top, purple, lightblue);
+    height: 100vh;
+}
+.footer{
+   background-color: black;
+   color: white;
+   text-align: center;
+   padding: 10px;
+   clear: both;
+   margin-top: 165px;
+}
+</style>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Job_Listings.html">Job Listings</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+        </nav>
+<center>
+<h2>IT Job Listings</h2>
+<div>
+<div class="job-button" onclick="toggleDescription(this)">
+ <p>Software Engineer</p>
+  <div class="job-description">
+    Develop and maintain software applications for our company's internal systems. 
+    <br>
+    <button class="learn-more-button" onclick="window.location.href='#'">Learn More</button>
+  </div>
+</div>
+
+<div class="job-button" onclick="toggleDescription(this)">
+    <p>Network Administrator</p>
+  <div class="job-description">
+    Manage and troubleshoot our network infrastructure, ensuring smooth operations and security.
+    <br>
+    <button class="learn-more-button" onclick="window.location.href='#'">Learn More</button>
+  </div>
+</div>
+
+<div class="job-button" onclick="toggleDescription(this)">
+    <p> Database Administrator</p>
+  <div class="job-description">
+    Design, implement, and maintain our databases, ensuring data integrity and performance.
+    <br>
+    <button class="learn-more-button" onclick="window.location.href='#'">Learn More</button>
+  </div>
+</div>
+</div>
+    <div>
+<div class="job-button" onclick="toggleDescription(this)">
+    <p> Cybersecurity Analyst</p>
+  <div class="job-description">
+    Protect our systems and data from cyber threats, conducting security assessments and incident response.
+    <br>
+    <button class="learn-more-button" onclick="window.location.href='#'">Learn More</button>
+  </div>
+</div>
+
+<div class="job-button" onclick="toggleDescription(this)">
+    <p> Help Desk Technician</p>
+  <div class="job-description">
+    Provide technical support to our employees, resolving software and hardware issues.
+    <br>
+    <button class="learn-more-button" onclick="window.location.href='#'">Learn More</button>
+  </div>
+</div>
+
+<div class="job-button" onclick="toggleDescription(this)">
+    <p>IT Project Manager</p>
+  <div class="job-description">
+    Lead and manage IT projects, ensuring they are delivered on time and within budget.
+    <br>
+    <button class="learn-more-button" onclick="window.location.href='#'">Learn More</button>
+  </div>
+</div>
+    </div>
+</center>
+
+<script>
+function toggleDescription(button) {
+  const description = button.querySelector('.job-description');
+  description.style.display = description.style.display === 'none' ? 'block' : 'none';
+}
+</script>
+      <div class="footer">Copyright © 2024 Careerhub. All rights reserved.</div>
+</body>
+</html> 

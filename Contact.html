@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+<style>
+    
+         .nav {
+            background: url('https://imageio.forbes.com/specials-images/imageserve/61d52d4e3a76ed81ac034ea8/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds') no-repeat center;
+            background-size: cover;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav li {
+            font-family: serif;
+            color: orange;
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: darkorange;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav a:hover {
+            color: #00ffcc;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to top, purple, lightblue);
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .cta-button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .cta-button:hover {
+            background-color: darkgreen;
+        }
+        .footer{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            clear: both;
+            margin-top: 290px;
+        }
+
+    </style>
+</head>
+<body>
+     <nav class="nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Job_Listings.html">Job Listings</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="email" id="email" placeholder="Your Email">
+            <textarea id="message" placeholder="Your Message"></textarea>
+            <button type="submit" class="cta-button">Submit</button>
+        </form>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let message = document.getElementById('message').value.trim();
+            let errorMessage = document.getElementById('error-message');
+            
+            if (name === '' || email === '' || message === '') {
+                errorMessage.textContent = 'All fields are required!';
+                return;
+            }
+            
+            if (!email.includes('@')) {
+                errorMessage.textContent = 'Please enter a valid email address!';
+                return;
+            }
+            
+            errorMessage.textContent = '';
+            alert('Form submitted successfully!');
+            document.getElementById('contactForm').reset();
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(event) {
+                event.preventDefault();
+                let target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+    <div class="footer">Copyright © 2024 Careerhub. All rights reserved.</div>
+       
+</body>
+</html>
